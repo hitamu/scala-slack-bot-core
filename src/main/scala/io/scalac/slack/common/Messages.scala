@@ -71,6 +71,10 @@ case class Title(value: String, url: Option[String] = None) extends RichMessageE
 
 case class Color(value: String) extends RichMessageElement
 
+final case class Action(name: String, text: String, actionType: String, value: String)
+
+case class Actions(actions: List[Actions]) extends RichMessageElement
+
 object Color {
   val good = Color("good")
   val warning = Color("warning")
